@@ -40,7 +40,7 @@
         {
             $.post("http://sacygrestaurantes.com/dbs.php",{id:id},function(data){
                 $("#video").prop("src",data);
-				swal(":D !!!","Video cargado!!!","success");
+				swal("Capitulo "+id+" se ha seleccionado!!!","El video puede tardar un poco el cargar","success");
             });
         }
         function mensaje(texto)
