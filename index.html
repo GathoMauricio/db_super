@@ -13,12 +13,13 @@
         function onBodyLoad()
         {       
             document.addEventListener("deviceready", onDeviceReady, false);
+			//document.getElementById("video").src="https://archive.org/download/sup2lite/sup2lite.mp4";
+			document.getElementById("video").src="http://cache-1.sendvid.com/24g9q9t2.mp4";
         }
 
         function onDeviceReady()
         {
-            // do your thing!
-            navigator.notification.alert("PhoneGap is working")
+            
         }
 
         </script>
@@ -27,19 +28,26 @@
 		 {
 			 background-color:#000;
 		 }
-         #cabecera
+         .contenedor
 		 {
 			 padding:10px;
+		 }
+		 #video
+		 {
+			 width:100%;
+			 height:auto;
 		 }
          </style>
     </head>
     <body onload="onBodyLoad()">
-   	<div id="cabecera">
+   	<div class="contenedor">
     <img src="img/super.jpg" width="100%">
     </div>
-    <video src="https://archive.org/download/sup2lite/sup2lite.mp4" controls>
+    <div class="contenedor">
+    <video id="video" src="" controls>
   	Tu navegador no implementa el elemento <code>video</code>.
 	</video>
+    </div>
     </body>
 </html>
 
