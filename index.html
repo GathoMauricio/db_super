@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Hello PhoneGap</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta charset="utf-8">
+
+
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery-ui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/jquery-ui.min.css" />
+        <script type="text/javascript">
+
+        function onBodyLoad()
+        {       
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        function onDeviceReady()
+        {
+           
+        }
+
+        </script>
+         <style type="text/css">
+		 body
+		 {
+			 background-color:#000;
+		 }
+		 a
+		 {
+			text-decoration:none; 
+			padding-top:10px;
+			color:#fff;
+		 }
+         .contenedor
+		 {
+			 padding:10px;
+		 }
+		 #video
+		 {
+			 width:100%;
+			 height:auto;
+		 }
+         </style>
+    </head>
+    <body onload="onBodyLoad()">
+    <center>
+        <div id="facebook"> 
+    	<a href="#" onClick="loginFacebook();">  
+          <img src="img/registrate.png" height="40" width="100%">
+    	</a>
+        </div>
+    </center> 
+   	<div class="contenedor">
+    <img src="img/super.jpg" width="100%"> 
+    </div>
+    <div class="contenedor">
+    <video id="video" src="" controls>
+  	Tu navegador no implementa el elemento<code>video</code>.
+	</video>
+ 
+    </body>
+</html>
+
