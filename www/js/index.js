@@ -57,6 +57,7 @@ $("#facebook").html("<a href='#' onClick='cerrarSesion();'>Cerrar sesion</a>");
 function(error){}
 );	
 }
+
 function cerrarSesion()
 {
 facebookConnectPlugin.login(
