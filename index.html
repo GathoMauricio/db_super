@@ -11,39 +11,43 @@
         <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/jquery-ui.min.js"></script>
         <link rel="stylesheet" type="text/css" href="js/jquery-ui.min.css" />
+        <script type="text/javascript" charset="utf-8" src="js/alert.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/alert.css">
         <script type="text/javascript">
 
         function onBodyLoad()
         {       
             document.addEventListener("deviceready", onDeviceReady, false);
             $("#video").prop("src","http://cache-1.sendvid.com/24g9q9t2.mp4");
+
+            $.post("http://sacygrestaurantes.com/dbs.php",{},function(data){
+                $("#lista").html(data);
+                $("#acordeon").accordion();
+            });
+
+            
         }
 
         function onDeviceReady()
         {
            
         }
-        function loginFacebook(){
-        facebookConnectPlugin.login(['public_profile'],
-        function()
+        function facebook(){
+            navigator.app.loadUrl("https://m.facebook.com/katzesystems");
+        } 
+        
+        function cargarVideo(id)
         {
-        $("#facebook").html("<a href='#' onClick='cerrarSesion();'>Cerrar sesion</a>");
-        },
-        function(error){}
-        );  
+            $.post("http://sacygrestaurantes.com/dbs.php",{id:id},function(data){
+                $("#video").prop("src",data);
+				swal(":D !!!","Video cargado!!!","success");
+            });
         }
-
-        function cerrarSesion()
+        function mensaje(texto)
         {
-        facebookConnectPlugin.login(
-        function()
-        {
-        $("#facebook").html('<a href="#" onClick="loginFacebook();"> <img src="img/registrate.png" height="40" width="100%"></a>');
-        },
-        function(error){}
-        );
-
+            swal("Oops!!!",texto,"success");
         }
+        
         </script>
          <style type="text/css">
 		 body
@@ -60,6 +64,12 @@
 		 {
 			 padding:10px;
 		 }
+         #lista
+         {
+             padding:10px;
+             height: 150px;
+             overflow: scroll;
+         }
 		 #video
 		 {
 			 width:100%;
@@ -70,19 +80,24 @@
     <body onload="onBodyLoad()">
     <center>
         <div id="facebook"> 
-    	<a href="#" onClick="loginFacebook();">  
-          <img src="img/registrate.png" height="40" width="100%">
+    	<a href="#" onClick="facebook();">  
+          <img src="img/facebook.png" height="40" width="100%">
     	</a>
-        </div>
-    </center> 
+        </div>  
+    </center>
    	<div class="contenedor">
     <img src="img/super.jpg" width="100%"> 
     </div>
     <div class="contenedor">
-    <video id="video" src="" controls>
+    <video id="video" src="" controls> 
   	Tu navegador no implementa el elemento<code>video</code>.
-	</video>
- 
+	</video> 
+
+    <div id="lista"></div>
+    <br>
+    <center>
+        <h5 style="color:white">Desarrollado por Gatho - KatzeSystems</h5>
+    </center>
     </body>
 </html>
 
