@@ -47,3 +47,24 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function loginFacebook(){
+facebookConnectPlugin.login(['public_profile'],
+function()
+{
+$("#facebook").html("<a href='#' onClick='cerrarSesion();'>Cerrar sesion</a>");
+},
+function(error){}
+);	
+}
+function cerrarSesion()
+{
+facebookConnectPlugin.login(
+function()
+{
+$("#facebook").html('<a href="#" onClick="loginFacebook();"> <img src="img/registrate.png" height="40" width="100%"></a>');
+},
+function(error){}
+);
+
+}
