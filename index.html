@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Dragon Ball Super</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta charset="utf-8">
+
+
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript">
+
+        function onBodyLoad()
+        {       
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        function onDeviceReady()
+        {
+            // do your thing!
+            navigator.notification.alert("PhoneGap is working")
+        }
+
+        </script>
+         <style type="text/css">
+		 body
+		 {
+			 background-color:#000;
+		 }
+         #cabecera
+		 {
+			 padding:10px;
+		 }
+         </style>
+    </head>
+    <body onload="onBodyLoad()">
+   	<div id="cabecera">
+    <img src="img/super.jpg" width="100%">
+    </div>
+    <video src="https://archive.org/download/sup2lite/sup2lite.mp4" controls>
+  	Tu navegador no implementa el elemento <code>video</code>.
+	</video>
+    </body>
+</html>
+
